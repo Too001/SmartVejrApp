@@ -45,7 +45,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ sensorData.temperature }}</td>
+                    <td>{{ sensorData.tempature }}</td>
                     <td>{{ sensorData.humidity }}</td>
                     <td>{{ sensorData.timestamp }}</td>
                 </tr>
@@ -89,7 +89,7 @@
             },
             methods: { // metoder
                 fetchSensorData() { // skab funktion der skal fetch data.
-                    fetch('https://smartappapicontroller.azurewebsites.net/api/smartAppApi') // fetch logik
+                    fetch('https://smartvejrcore-brdtfjdhbncrh3gb.northeurope-01.azurewebsites.net/api/SmartAppApi') // fetch logik
                         .then(response => response.json()) // få svar som json
                         .then(data => {
                             console.log(data)
@@ -116,7 +116,7 @@
                             labels: ['Temperatur', 'Luftfugtighed'], // tekst på graf sektionerne
                             datasets: [{ 
                                 label: 'Sensor Data',
-                                data: [data.temperature, data.humidity], // send data.tempature og humidity data som værdi til grafen
+                                data: [data.tempature, data.humidity], // send data.tempature og humidity data som værdi til grafen
                                 backgroundColor: ['#4CAF50', '#FF5722'] // angiv farve i hex.
                             }]
                         },
