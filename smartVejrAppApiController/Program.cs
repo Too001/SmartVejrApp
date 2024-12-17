@@ -7,11 +7,13 @@ builder.Services.AddSingleton<SmartVejrAppRepository>(new SmartVejrAppRepository
 
 builder.Services.AddCors(options =>
 {
-options.AddPolicy(name: "AllowAll",
-    policy =>
-    {
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); // Cors policy
-    });
+    options.AddPolicy(name: "AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader(); // Cors policy
+        });
 });
 
 builder.Services.AddControllers();
@@ -29,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll"); // CORS
 
 app.UseAuthorization();
 
