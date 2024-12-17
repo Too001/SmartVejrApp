@@ -1,0 +1,6 @@
+@smartAppApiController_HostAddress = http://localhost:5021
+
+GET {{smartAppApiController_HostAddress}}/Weather/
+Accept: application/json
+
+###
