@@ -24,7 +24,7 @@ namespace SmartVejrApp
             // Get weather by id
             public Weather? GetById(int id)
             {
-                return _weathers.Find(playground => playground.Id == id);
+                return _weathers.Find(weather => weather.Id == id);
             }
 
             // add
