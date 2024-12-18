@@ -22,7 +22,7 @@ namespace smartAppApiController.Controllers
             return Ok(weathers);
         }
 
-        // GET api/PlayGround
+        // GET api/Weather
         [HttpGet("{id}")]
         [EnableCors("allowAll")]
         public ActionResult<Weather> Get(int id)
@@ -38,7 +38,7 @@ namespace smartAppApiController.Controllers
         // POST api/Weather
         [HttpPost]
         [EnableCors("allowAll")]
-        public ActionResult<Weather> Post([FromBody] Weather newWeather) // apost fra krop vores playground
+        public ActionResult<Weather> Post([FromBody] Weather newWeather)
         {
             if (newWeather == null) // hvis null
             {
